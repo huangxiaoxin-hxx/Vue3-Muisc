@@ -1,0 +1,25 @@
+@keyframes rotateOne {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotateTwo {
+    0% {
+      transform: rotate(0deg) translateX(-50%);;
+    }
+    100% {
+      transform: rotate(360deg) translateX(-50%);;
+    }
+  }
+  .record {
+      animation: rotateOne 40s linear infinite;
+  }
+  .coverAfresh {
+    animation: rotateTwo 40s linear infinite;
+  }
+  .cover-pause {
+    animation-play-state: paused;
+  }
