@@ -10,4 +10,5 @@ export default {
     return state.playList[state.audioIngIndex] || {}
   },
   IS_HOME: state => state.isHome,
+  SEARCH_LIST: state => state.searchList
 }

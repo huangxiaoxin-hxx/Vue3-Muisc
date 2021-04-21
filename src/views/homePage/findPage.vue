@@ -59,7 +59,11 @@
     <div class="find_page_box">
       <div class="mrl20">
         <div class="small_title">
-          {{ privateCustom && privateCustom.uiElement.mainTitle.title }}
+          {{
+            privateCustom &&
+            privateCustom.uiElement.mainTitle &&
+            privateCustom.uiElement.mainTitle.title
+          }}
         </div>
         <div class="flex al_center">
           <div class="title flex1 flex al_center">

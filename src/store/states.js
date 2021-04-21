@@ -18,4 +18,10 @@ export default {
   playState: false, // 是否正在播放，
   fullScreen: false, // 是否是全屏展示播放页
   isHome: false, // 默认不在Home页
+  searchList: {
+    result: null,
+    offset: 0,
+    limit: 30,
+    hasMore: true
+  }, // 搜索页歌单
 }

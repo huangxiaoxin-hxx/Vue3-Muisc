@@ -31,7 +31,7 @@
         @click="audioThis(item, index)"
         :class="isActive(item)"
       >
-        <div class="flex1">
+        <div class="playlist_name ellipsis">
           {{ item.name }}<span class="ar_name"> - {{ item.ar[0].name }}</span>
         </div>
         <van-icon name="cross" color="#858585" size="0.5rem" />
@@ -145,6 +145,9 @@ export default {
       font-size: 14px;
       height: 40px;
       line-height: 40px;
+      .playlist_name {
+        width: 90%;
+      }
       &.active {
         color: red;
         .ar_name {

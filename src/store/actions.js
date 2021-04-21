@@ -70,5 +70,34 @@ export default {
     router.push({
       path: "/",
     })
+  },
+  // 搜索歌曲列表，判断列表是否能够下拉
+  searchListAction({
+    commit,
+    state
+  }, {
+    result,
+    offset
+  }) {
+    const limit = 30
+    const total = 30 * offset
+    let hasMore = true
+    console.log(offset)
+    if (total > result.songCount) {
+      hasMore = false
+    }
+    var params = {
+      result: result.songs,
+      offset: offset,
+      limit: limit,
+      hasMore: hasMore
+    }
+    if (offset == 1) {
+      commit("setSearchSongs", params)
+    } else {
+      result.songs = [...state.searchList.result, ...result.songs]
+      params.result = result.songs
+      commit("setSearchSongs", result.songs, offset, limit, hasMore)
+    }
   }
 }

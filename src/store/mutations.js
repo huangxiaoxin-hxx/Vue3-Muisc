@@ -43,4 +43,11 @@ export default {
   setAudioMode(state, mode) {
     state.mode = mode
   },
+  setSearchSongs(state, params) {
+    console.log(params)
+    state.searchList.result = params.result
+    state.searchList.offset = params.offset
+    state.searchList.limit = params.limit
+    state.searchList.hasMore = params.hasMore
+  }
 }

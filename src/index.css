@@ -11,6 +11,9 @@
 .mt32 {
   margin-top: 32px;
 }
+.mt18 {
+  margin-top: 18px;
+}
 .yun_loading {
   position: fixed;
   top: 50%;
@@ -29,4 +32,10 @@
 .pd23 {
   box-sizing: border-box;
   padding: 0 0.23rem;
+}
+.ellipsis {
+  overflow:hidden; 
+  text-overflow:ellipsis; 
+  white-space:nowrap; 
+
 }
