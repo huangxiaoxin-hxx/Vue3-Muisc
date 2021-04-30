@@ -31,10 +31,8 @@
       swipeable
     >
       <van-tab title="综合">
-        <songsListBox>
-          <list-scroll class="scroll_box">
-            <complexSearch :searchConfirm="searchConfirm" />
-          </list-scroll>
+        <songsListBox :scroll="true">
+          <complexSearch :searchConfirm="searchText" />
         </songsListBox>
       </van-tab>
       <van-tab title="单曲">
@@ -63,20 +61,21 @@ import { useStore } from "vuex";
 import { current } from "../../parameter/refPar";
 import songsListBox from "../components/songsListBox.vue";
 import complexSearch from "./components/complexSearch.vue";
+import listScroll from "../../components/ListScroll.vue";
+import { checkSearch } from "../../methods";
 export default {
   components: {
     songsListBox,
     complexSearch,
+    listScroll,
   },
   setup() {
     const route = useRoute();
     const router = useRouter();
     const searchText = ref(null);
     const store = useStore();
-    const searchConfirm = ref(null);
-
     searchText.value = route.params.name;
-    searchConfirm.value = route.params.name;
+    searchText.value = checkSearch(searchText.value);
 
     onMounted(async () => {
       getSearchSongs({
@@ -100,7 +99,6 @@ export default {
       back,
       current,
       songsListBox,
-      searchConfirm,
     };
   },
 };

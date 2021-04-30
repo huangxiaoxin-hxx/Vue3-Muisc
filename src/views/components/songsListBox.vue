@@ -1,5 +1,9 @@
 <template>
-  <div class="songs_list_box" :style="{ height: clientHeight - 100 + 'px' }">
+  <div
+    class="songs_list_box"
+    :class="scroll ? 'scroll' : ''"
+    :style="{ height: clientHeight - 100 + 'px' }"
+  >
     <slot></slot>
   </div>
 </template>
@@ -8,6 +12,9 @@
 import { onMounted } from "vue";
 import { clientHeight } from "../../parameter/refPar";
 export default {
+  props: {
+    scroll: false,
+  },
   setup() {
     onMounted(async () => {
       clientHeight.value = document.documentElement.clientHeight;
@@ -26,5 +33,8 @@ export default {
   border-radius: 10px 10px 0 0;
   padding: 10px;
   box-sizing: border-box;
+}
+.scroll {
+  overflow: scroll;
 }
 </style>

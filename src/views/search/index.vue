@@ -13,6 +13,7 @@
         type="text"
         :placeholder="searchdefault"
         v-model="searchText"
+        @keyup.enter="keyDown"
       />
       <van-icon
         name="cross"
@@ -64,11 +65,20 @@ export default {
       router.back();
     };
 
+    const keyDown = () => {
+      console.log("???");
+      router.push({
+        name: "searchSongs",
+        params: { name: searchText.value },
+      });
+    };
+
     return {
       searchdefault,
       searchText,
       showSearchFixed,
       back,
+      keyDown,
     };
   },
 };

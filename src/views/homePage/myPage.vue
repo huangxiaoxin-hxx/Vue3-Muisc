@@ -98,13 +98,13 @@ export default {
       playlist.value = res.data;
       console.log(playlist.value.playlist);
     });
-    getLikelist(uid).then((res) => {
-      likeList.value = res.data.ids;
-      // const likeFirst = res.data.ids[0];
-      // getSearch(likeFirst).then((res) => {
-      //   like.value = res.data.result.songs[0];
-      // });
-    });
+    // getLikelist(uid).then((res) => {
+    //   likeList.value = res.data.ids;
+    //   // const likeFirst = res.data.ids[0];
+    //   // getSearch(likeFirst).then((res) => {
+    //   //   like.value = res.data.result.songs[0];
+    //   // });
+    // });
 
     const goSongsList = () => {
       router.push({

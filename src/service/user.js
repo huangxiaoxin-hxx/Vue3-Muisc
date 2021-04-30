@@ -6,7 +6,7 @@ export function getUserInfo() {
 }
 
 export function getUserDetail(id) {
-    console.log(id)
+    console.log(id + 'detail')
     return axios.get('/user/detail?uid=' + id);
 }
 

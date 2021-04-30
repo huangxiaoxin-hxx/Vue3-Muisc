@@ -24,4 +24,5 @@ export default {
     limit: 30,
     hasMore: true
   }, // 搜索页歌单
+  searchText: null, // 搜索关键词
 }

@@ -37,5 +37,17 @@
   overflow:hidden; 
   text-overflow:ellipsis; 
   white-space:nowrap; 
-
+}
+.p-10 {
+  padding: 10px;
+  box-sizing: border-box;
+}
+.view_more {
+  height: 40px;
+  line-height: 40px;
+  border-top: 1px solid rgba(255,255,255, 0.4);
+  text-align: center;
+}
+.relative {
+  position: relative;
 }

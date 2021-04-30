@@ -92,6 +92,7 @@ export default {
       router.back();
     };
     const goPlayer = (index) => {
+      console.log(state.playlistDetail.tracks);
       store.dispatch("selectPlay", {
         list: state.playlistDetail.tracks,
         index,

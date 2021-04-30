@@ -2,12 +2,13 @@ import axios from 'axios'
 import { Toast } from 'vant'
 import router from '../router'
 
-// axios.defaults.baseURL = process.env.NODE_ENV == 'development' ? '/api' : '/api'
-axios.defaults.baseURL = "http://localhost:3001"
+axios.defaults.baseURL = process.env.NODE_ENV == 'development' ? 'http://localhost:3001' : 'http://1.14.144.212:3001/'
+// axios.defaults.baseURL = "http://1.14.144.212:3001/"
 axios.defaults.withCredentials = true
 // axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest'
 // axios.defaults.headers['token'] = localStorage.getItem('token') || ''
 axios.defaults.headers.post['Content-Type'] = 'application/json'
+// axios.defaults.headers.post['withCredentials'] = true
 
 axios.interceptors.response.use(res => {
     // if (res.data && res.data.code == 502) {

@@ -48,6 +48,7 @@ export default {
     index
   }) {
     commit("setAudioList", list)
+    // 更新播放歌单
     if (state.mode === 2) {
       const randomList = shuffle(list)
       commit("setPlayList", randomList)
@@ -56,6 +57,21 @@ export default {
       commit("setPlayList", list)
     }
     commit("setAudioIndex", index)
+    commit("setPlayState", true)
+    commit("setFullScreen", true)
+  },
+  // 选择单曲开始播放
+  selectSongPlay({
+    commit,
+    state
+  }, {
+    song
+  }) {
+    console.log(song)
+    commit("setAudioList", [song, ...state.audioList])
+    // 更新播放歌单
+    commit("setPlayList", [song, ...state.playList])
+    commit("setAudioIndex", 0)
     commit("setPlayState", true)
     commit("setFullScreen", true)
   },

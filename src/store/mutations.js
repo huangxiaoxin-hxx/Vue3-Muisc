@@ -49,5 +49,8 @@ export default {
     state.searchList.offset = params.offset
     state.searchList.limit = params.limit
     state.searchList.hasMore = params.hasMore
+  },
+  setSearchText(state, value) {
+    state.searchText = value
   }
 }

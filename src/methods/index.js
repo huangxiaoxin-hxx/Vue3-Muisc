@@ -1,4 +1,4 @@
-
+import { getStore, setStore } from '../utils/storage'
 
 export const getTime = (time) => {
   console.log(time)
@@ -26,5 +26,15 @@ export const checkModel = (modelArr, dataArr) => {
       checkArr[item] = false
     }
   })
-  console.log(checkArr)
+  return checkArr
+}
+
+// 检测搜索词是否存在
+export const checkSearch = (value) => {
+  if (value) {
+    setStore('searchText', value)
+    return value
+  } else {
+    return getStore('searchText')
+  }
 }
